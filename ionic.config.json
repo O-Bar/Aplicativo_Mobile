@@ -1,0 +1,7 @@
+{
+  "name": "pro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
