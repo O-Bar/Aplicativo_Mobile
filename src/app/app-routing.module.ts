@@ -11,6 +11,15 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'final',
+    loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'final',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
