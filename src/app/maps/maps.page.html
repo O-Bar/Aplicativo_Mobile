@@ -1,0 +1,11 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>maps</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" id="mapa">
+  <div *ngIf="apiLoaded | async">
+    <google-map [options]="options"></google-map>
+  </div>
+</ion-content>
