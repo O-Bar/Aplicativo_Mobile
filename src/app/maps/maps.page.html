@@ -7,9 +7,14 @@
 </ion-header>
 
 <ion-content>
-  
-  <div *ngIf="apiLoaded | async">
-    <google-map></google-map>
-  </div>
-            
+  <ion-card>
+    <div *ngIf="apiLoaded | async">
+      <google-map height="300px"
+        width="700px"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)"></google-map>
+    </div>
+  </ion-card>          
 </ion-content>
