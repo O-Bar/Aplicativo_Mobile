@@ -6,7 +6,23 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },  {
+    path: 'pagina-inicial',
+    loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then( m => m.PaginaInicialPageModule)
+  },
+  {
+    path: 'calendario',
+    loadChildren: () => import('./calendario/calendario.module').then( m => m.CalendarioPageModule)
+  },
+  {
+    path: 'adicionar',
+    loadChildren: () => import('./adicionar/adicionar.module').then( m => m.AdicionarPageModule)
+  },
+  {
+    path: 'ajuda',
+    loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
   }
+
 ];
 
 @NgModule({
