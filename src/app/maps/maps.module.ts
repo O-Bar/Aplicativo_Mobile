@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
-
 import { GoogleMapsModule } from '@angular/google-maps';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -15,11 +13,6 @@ import { MapsPage } from './maps.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    MapsPageRoutingModule
-  ],
-  declarations: [MapsPage]
-})
-export class MapsPageModule {}
     MapsPageRoutingModule,
     GoogleMapsModule,
     HttpClientModule,

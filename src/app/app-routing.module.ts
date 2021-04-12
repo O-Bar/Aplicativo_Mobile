@@ -19,11 +19,7 @@ const routes: Routes = [
     path: 'final',
     loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
   },
-  {
-    path: '',
-    redirectTo: 'final',
-    pathMatch: 'full'
-  }
+  
 ];
 
 
