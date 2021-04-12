@@ -13,8 +13,29 @@
         width="700px"
         [center]="center"
         [zoom]="zoom"
-        (mapClick)="moveMap($event)"
-        (mapMousemove)="move($event)"></google-map>
+        (mapMousemove)="move($event)"
+        (mapClick)="addMarker($event)">
+        <map-marker *ngFor="let markerPosition of markerPositions"
+              [position]="markerPosition"
+              [options]="markerOptions"></map-marker>
+      </google-map>
     </div>
+    <head>
+      <title>Geocoding Service</title>
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <script src="./index.js"></script>
+    </head>
+    <body>
+      <div id="floating-panel">
+        <input id="address" type="textbox" value="Sydney, NSW" />
+        <input id="submit" type="button" value="Geocode" />
+      </div>
+      <div id="map"></div>
+  
+      <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI&callback=initMap&libraries=&v=weekly"
+        async
+      ></script>
+    </body>
   </ion-card>          
 </ion-content>
