@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      <ion-row  class="ion-padding">
+        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
+        <ion-col size="auto">Meu Remédio</ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia-->
+  <ion-text color="medium" class="ion-text-center">
+    <p>Adicione seu remédio e a dose</p>
+    <!--Mostra esse texto-->
+  </ion-text>
+
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="auto">
+      <ion-button expand="block" color="tertiary" routerLink='/maps'>
+        Acabou seu remédio? Saiba onde comprar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
