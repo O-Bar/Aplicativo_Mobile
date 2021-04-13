@@ -1,0 +1,40 @@
+#titulo {
+    text-align: center;
+    color: rgb(156, 6, 6);
+    font-size: 40px;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+#container {
+    text-align: start;
+    color: rgb(255, 188, 5);
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #fffefe;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
