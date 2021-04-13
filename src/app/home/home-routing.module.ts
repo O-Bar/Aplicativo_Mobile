@@ -6,7 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-  }
+    children:[
+      {
+        path: 'adicionar',
+        loadChildren: () => import('./adicionar/adicionar.module').then( m => m.AdicionarPageModule)
+      }
+    ]    
+  },
+ 
+
+
 ];
 
 @NgModule({

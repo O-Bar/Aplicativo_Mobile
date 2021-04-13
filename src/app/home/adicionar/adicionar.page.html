@@ -1,0 +1,70 @@
+<link href= "https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+    <ion-item color="light">
+      <ion-label position="floating">Adicionar Remédios</ion-label>
+      <!--Nome do campo de digitação-->
+      <ion-input type="text" [(ngModel)]="NovoRemedioNome"></ion-input>
+      <!--campo de digitação para inserir as novas tarefas-->
+    </ion-item>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="adicionaRemedio()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!--Botão que adiciona a tarefa à lista, chama a função criada no Ts-->
+  </ion-toolbar>
+  
+
+  <!--Ion segment - são as abinhas de to do, done, all-->
+  <!--E foi colocado dentro do header para ela ficar fixa quando rolarmos a tela-->
+  <ion-segment [(ngModel)]="currentFilter" (ionChange)="updateFilter()">
+  <!--funciona como um filtro-->
+    <ion-segment-button value="todos">
+      <ion-label>Todos</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tomados">
+      <ion-label>Tomados</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="para-tomar">
+      <ion-label>Para tomar</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-content>
+    <ion-list *ngIf="remedios.length > 0; else emptyRemedios">
+    <!--Se o tamanho da "lista" de tarefas for maior que 0, ou seja não estiver vazia-->
+      <ion-item *ngFor="let remedio of filteredRemedio">
+        <ion-checkbox slot="start" [(ngModel)]="remedio.done"></ion-checkbox>
+        <!--Cria um check na frente da tarefa, para marcar se ela foi realzida ou não-->
+        <!--toda vez que alguém clicar como concluída uma tarefa, ele vai chamar a função qur calcula a porcentagem e exibir atualizada, no ion progress bar-->
+        <ion-label>{{remedio.name}}</ion-label>
+        <!--Cria um campo com o nome da tarefa (inserido no input)-->
+        <ion-button slot="end" fill="clear" color="danger" (click)="removeRemedio(remedio.id)">
+        <!--botão para excluir a tarefa, ele vai remover verificando o nome da tarefa-->
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  
+    <ng-template #emptyRemedios>
+    <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia-->
+      <ion-text color="medium" class="ion-text-center">
+        <p>Adicione remédios</p>
+        <!--Mostra esse texto-->
+      </ion-text>
+    </ng-template>
+  </ion-content>
+
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+       <p class="ion-text-center custom-font">Já cadastrei os remédios, 
+         <a href="">quero consultá-los</a> </p>
+  </ion-toolbar>
+</ion-footer>
+
