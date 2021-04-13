@@ -8,3 +8,20 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-header>
+  <ion-toolbar color="light">
+    Adicionar
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="light">
+    <ion-label position="floating">Adicionar Remédios</ion-label>
+    <ion-input type="text" [(ngModel)]="NovoRemedioNome"></ion-input>
+
+    <ion-button fill="clear" slot="end" (click)="adicionaRemedio()">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </ion-item>
+    
+</ion-content>
