@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -19,9 +20,12 @@ const routes: Routes = [
     path: 'final',
     loadChildren: () => import('./final/final.module').then( m => m.FinalPageModule)
   },
+  {
+    path: 'calendario',
+    component: CalendarComponent
+  },
   
 ];
-
 
 @NgModule({
   imports: [
