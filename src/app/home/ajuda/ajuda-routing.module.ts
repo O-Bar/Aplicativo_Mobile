@@ -6,7 +6,8 @@ import { AjudaPage } from './ajuda.page';
 const routes: Routes = [
   {
     path: '',
-    component: AjudaPage
+    component: AjudaPage,
+   
   }
 ];
 

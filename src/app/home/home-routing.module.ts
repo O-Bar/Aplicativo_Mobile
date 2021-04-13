@@ -22,7 +22,15 @@ const routes: Routes = [
       {
         path: 'ajuda',
         loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
-      }
+      },
+      {
+        path: 'sobre',
+        loadChildren: () => import('./sobre/sobre.module').then( m => m.SobrePageModule)
+      },
+      {
+        path: 'maps',
+        loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+      },
     ]
   },
   

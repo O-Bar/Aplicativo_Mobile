@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'maps',
-    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+    loadChildren: () => import('./home/maps/maps.module').then( m => m.MapsPageModule)
   },
   {
     path: 'final',
