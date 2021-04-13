@@ -10,10 +10,8 @@ import { catchError, map } from 'rxjs/operators';
   styleUrls: ['./maps.page.scss'],
 })
 export class MapsPage implements OnInit {
-
-  
-  center: google.maps.LatLngLiteral = {lat: 24, lng: 12};
-  zoom = 4;
+  center: google.maps.LatLngLiteral = {lat: -23.5489, lng: -46.6388};
+  zoom = 12;
   display: google.maps.LatLngLiteral;
   markerOptions: google.maps.MarkerOptions = {draggable: false};
   markerPositions: google.maps.LatLngLiteral[] = [];
