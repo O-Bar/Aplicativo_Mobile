@@ -1,6 +1,9 @@
-<ion-row>
+
+<h1>ola mundo</h1>
+
+<!-- <ion-row>
   <ion-col size="auto">
-    <ion-buttom
+    <ion-button
       class="btn btn-primary"
       mwlCalendarPreviousView
       [view]="view"
@@ -8,7 +11,7 @@
       (viewDateChange)="closeOpenMonthViewDay()"
     >
       Previous
-    </ion-buttom>
+    </ion-button>
     <ion-button
       class="btn btn-outline-secondary"
       mwlCalendarToday
@@ -30,12 +33,12 @@
     <h3>{{ viewDate | calendarDate: view + 'ViewTitle':'en' }}</h3>
   </ion-col>
   <ion-col size="auto">
-    <ion-buttom
+    <ion-button
       (click)="setView(CalendarView.Month)"
       [class.active]="view === CalendarView.Month"
     >
       Month
-    </ion-buttom>
+    </ion-button>
     <ion-button
       class="btn btn-primary"
       (click)="setView(CalendarView.Week)"
@@ -87,12 +90,12 @@
 
 <!-- Everything you see below is just for the demo, you don't need to include it in your app -->
 
-<br /><br /><br />
+<!-- <br /><br /><br />
 
 <h3>
   Edit events
   <!--ion-button-->
-  <button class="btn btn-primary float-right" (click)="addEvent()">
+  <!-- <button class="btn btn-primary float-right" (click)="addEvent()">
     Add new
   </button>
   <div class="clearfix"></div>
@@ -197,4 +200,4 @@
       OK
     </button>
   </div>
-</ng-template>
+</ng-template>  -->

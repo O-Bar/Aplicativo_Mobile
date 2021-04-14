@@ -8,13 +8,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CalendarComponent } from './home/calendario/calendar/calendar.component';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent , CalendarComponent],
+  declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
