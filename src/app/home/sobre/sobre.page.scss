@@ -10,8 +10,18 @@ ion-toolbar ion-title img {
     margin: 0; //para alinhar
   }
   ion-content {
-    --background: #ffff00 url('https://scontent.fcgh17-1.fna.fbcdn.net/v/t1.6435-9/170170919_503920223949254_7341541215211772248_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=4-yLr8hqIagAX_cBqgU&_nc_ht=scontent.fcgh17-1.fna&oh=b86865805002846cbb726816ebf3b333&oe=60951714') no-repeat center center / cover !important;
+    --background: #ffff00 url('https://static.vecteezy.com/ti/vetor-gratis/p1/1843071-roxo-escuro-rosa-desfocado-vetor.jpg') no-repeat center center / cover !important;
   }
 #titulo {
-  color:  #84adad;
+  color:  #ffffff;
+}
+h3 {
+  color: white;
+}
+
+ul li {
+  color: white;
+}
+p {
+  color: white;
 }

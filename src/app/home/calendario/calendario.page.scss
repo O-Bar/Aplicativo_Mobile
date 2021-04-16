@@ -9,6 +9,9 @@ ion-toolbar ion-title img {
     font-weight: normal; 
     margin: 0; //para alinhar
   }
+  ion-content {
+    --background: #ffff00 url('https://static.vecteezy.com/ti/vetor-gratis/p1/1843071-roxo-escuro-rosa-desfocado-vetor.jpg') no-repeat center center / cover !important;
+  }
   
 #calendario {
   // Colors used
@@ -46,14 +49,13 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--blue-grey-100);
 }
 
 main {
   max-width: max-content;
   margin: 3em auto 0 auto;
   padding: 1.5em;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 2px solid var(--blue-grey-200);
   border-radius: 8px;
 }

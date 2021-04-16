@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar color="primary">
     <ion-title>
       <ion-row  class="ion-padding">
         <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
@@ -11,7 +11,7 @@
 
 <ion-content>
   <ion-item color="light">
-    <ion-label position="floating">Adicionar Remédios</ion-label>
+    <ion-label position="floating" >Adicionar Remédios</ion-label>
     <ion-input type="text" [(ngModel)]="NovoRemedioNome"></ion-input>
 
     <ion-button fill="clear" slot="end" (click)="adicionaRemedio()">
