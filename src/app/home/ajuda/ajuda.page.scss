@@ -15,16 +15,17 @@ ion-toolbar ion-title img {
 #titulo {
   color:  #ffffff;
 }
-h3 {
-  color: white;
+.cardAjuda {
+  background: rgba(15,8,33,0.7);
 }
 
-ul li {
+ion-card ion-card-title{
   color: white;
 }
-p {
-  color: white;
+ion-card ion-card-subtitle{
+  color: gray;
 }
-h2{
-  color: white;
+
+ion-card ion-card-content{
+  color: rgb(187, 187, 187);
 }
