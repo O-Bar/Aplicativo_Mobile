@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Remedio{
+interface Remedio {
   name: string;
   done: boolean;
   id: number;
@@ -13,60 +13,56 @@ interface Remedio{
 })
 export class AdicionarPage {
 
-  public NovoRemedioNome = ''; 
+  public novoRemedioNome = '';
   public completedPercentage = 0;
 
-  public remedios: Remedio[] = []; 
-  public filteredRemedios: Remedio[] = this.remedios; 
+  public remedios: Remedio[] = [];
+  public filteredRemedios: Remedio[] = this.remedios;
   public currentFilter: 'todos' | 'tomados' | 'para-tomar' = 'todos';
   public currentSearch = '';
-  
-  public calculateCompletedPercentage() {
-    let completedAmount = 0;
-    for (let i = 0; i < this.remedios.length; i++) { 
-      if (this.remedios[i].done) { 
-        completedAmount++;
-      }
-    }
-    this.completedPercentage = completedAmount / this.remedios.length;
 
+  public calculateCompletedPercentage() {
+    const completedRemedios = this.remedios.filter(remedio => remedio.done);
+    this.completedPercentage = completedRemedios.length / this.remedios.length;
   }
 
-  public adicionaRemedio() { 
-    const novoRemedio = {
-      name: this.NovoRemedioNome, 
+  public addRemedio() {
+    const newRemedio = {
+      name: this.novoRemedioNome,
       done: false,
-      id: new Date().getTime() 
-    }
-    this.remedios.push(novoRemedio); 
-    this.NovoRemedioNome= ''; 
+      id: new Date().getTime()
+    };
+    this.remedios.push(newRemedio);
+    this.novoRemedioNome = '';
     this.calculateCompletedPercentage();
     this.updateFilter();
   }
 
-  public removeRemedio(id: number) { 
-    const RemedioIndex = this.remedios.findIndex(Remedio => Remedio.id === id); 
-    this.remedios.splice(RemedioIndex, 1);
-     
+  public removeRemedio(id: number) {
+    const remedioIndex = this.remedios.findIndex(remedio => remedio.id === id);
+    this.remedios.splice(remedioIndex, 1);
     this.updateFilter();
   }
 
   public updateFilter() {
     let filteredBySegment: Remedio[];
     if (this.currentFilter === 'todos') {
-      filteredBySegment = this.remedios; 
+      filteredBySegment = this.remedios;
     } else if (this.currentFilter === 'tomados') {
-      filteredBySegment = this.remedios.filter(Remedio => Remedio.done);
+      filteredBySegment = this.remedios.filter(remedio => remedio.done);
     } else if (this.currentFilter === 'para-tomar') {
-      filteredBySegment = this.remedios.filter(Remedio => !Remedio.done); 
+      filteredBySegment = this.remedios.filter(remedio => !remedio.done);
     }
+
     if (this.currentSearch === '') {
-      this.filteredRemedios = filteredBySegment; 
+      this.filteredRemedios = filteredBySegment;
     } else {
       const lowercase = this.currentSearch.toLowerCase()
-      this.filteredRemedios = filteredBySegment.filter( 
-        task => task.name.toLowerCase().includes(lowercase) 
+      this.filteredRemedios = filteredBySegment.filter(
+        task => task.name.toLowerCase().includes(lowercase)
       );
     }
   }
+
 }
+  
