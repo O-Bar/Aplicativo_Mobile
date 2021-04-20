@@ -2,6 +2,9 @@
 
 
 <img src="https://blog.hariken.co/wp-content/uploads/2019/03/angularjs-logo.png" alt="ang" style="width:300px;"/>
+<img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="ts" style="width:30px;"/>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMRk3g9oapUnqAvZHc_zbRyHirzDKkBX-G3_nVEcPOE46ZBtrSvVL9eu8kC8EgFRMjgIE&usqp=CAU" alt="html" style="width:10px;"/>
+<img src="https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_960_720.png" alt="gg" style="width:10px;"/> 
 
 
 ## Paginas com TS e HTML <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="ts" style="width:30px;"/> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMRk3g9oapUnqAvZHc_zbRyHirzDKkBX-G3_nVEcPOE46ZBtrSvVL9eu8kC8EgFRMjgIE&usqp=CAU" alt="html" style="width:10px;"/>
