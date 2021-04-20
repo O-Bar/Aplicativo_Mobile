@@ -1,4 +1,4 @@
-# Meu remedio<img height="50" src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" /> 
+# Meu remedio<img width="55" height="55" src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png"/> 
 
 ## Linguagem base
    <img src="https://blog.hariken.co/wp-content/uploads/2019/03/angularjs-logo.png" width="300" height="300"/><img src="https://icons-for-free.com/iconfiles/png/512/development+framework+htm+hybrid+ionic+icon-1320165724223319441.png" width="300" height="300"/>
