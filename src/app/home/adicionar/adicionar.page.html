@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-title>
       <ion-row  class="ion-padding">
@@ -7,16 +7,50 @@
       </ion-row>
     </ion-title>
   </ion-toolbar>
+
+<ion-toolbar color="primary">
+  <ion-item color="primary">
+    <ion-label position="floating">Adicionar Remédio</ion-label>
+    <ion-input type="text" [(ngModel)]="novoRemedioNome"></ion-input>
+  </ion-item>
+  <ion-buttons slot="end">
+    <ion-button fill="clear" (click)="addRemedio()">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-progress-bar [value]="completedPercentage"></ion-progress-bar>
+<ion-segment [(ngModel)]="currentFilter" (ionChange)="updateFilter()">
+  <ion-segment-button value="todos">
+    <ion-label>Todos</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="tomados">
+    <ion-label>Tomados</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="para-tomar">
+    <ion-label>Para Tomar</ion-label>
+  </ion-segment-button>
+</ion-segment>
+
+<ion-toolbar color="light">
+  <ion-searchbar placeholder="Filtrar Remédio" [(ngModel)]="currentSearch" (ionChange)="updateFilter()"></ion-searchbar>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item color="light">
-    <ion-label position="floating" >Adicionar Remédios</ion-label>
-    <ion-input type="text" [(ngModel)]="NovoRemedioNome"></ion-input>
-
-    <ion-button fill="clear" slot="end" (click)="adicionaRemedio()">
-      <ion-icon slot="icon-only" name="add"></ion-icon>
+<ion-list *ngIf="remedios.length > 0; else emptyRemedios">
+  <ion-item *ngFor="let remedio of filteredRemedios">
+    <ion-checkbox slot="start" [(ngModel)]="remedio.done" (ionChange)="calculateCompletedPercentage()"></ion-checkbox>
+    <ion-label>{{remedio.name}}</ion-label>
+    <ion-button slot="end" fill="clear" color="danger" (click)="removeRemedio(remedio.id)">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-button>
   </ion-item>
-    
+</ion-list>
+
+<ng-template #emptyRemedios>
+  <ion-text color="medium" class="ion-text-center">
+    <p>Adicione remédios</p>
+  </ion-text>
+</ng-template>
 </ion-content>
