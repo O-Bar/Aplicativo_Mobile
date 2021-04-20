@@ -9,7 +9,7 @@
     Sobre
     Adicionar
 
-## Paginas com APIs e TS <img src="https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_960_720.png" alt="img" style="width:10px;"/> <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="img" style="width:10px; height: 40px"/>
+## Paginas com APIs e TS <img src="https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_960_720.png" alt="img" style="width:10px;"/> <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="img" style="width:10%"/>
 
     Maps
     Calendario
