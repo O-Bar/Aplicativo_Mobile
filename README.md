@@ -1,2 +1,2 @@
-![img](https://logodownload.org/wp-content/uploads/2014/09/google-logo-0-2048x2048.png)
+![img](https://logodownload.org/wp-content/uploads/2014/09/google-logo-0-100x100.png)
 # Aplicativo_Mobile
