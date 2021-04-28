@@ -6,7 +6,16 @@ ion-content {
     color: #ffffff;
 }
 
-#card {
-    height:auto;
-    width:fit-content;
+agm-map {
+    height: 300px;
 }
+
+ion-card {
+    height: auto;
+    width: 700px
+}
+
+#lista {
+    --background: url('https://static.vecteezy.com/ti/vetor-gratis/p1/1843071-roxo-escuro-rosa-desfocado-vetor.jpg') no-repeat center center / cover !important;
+}
+

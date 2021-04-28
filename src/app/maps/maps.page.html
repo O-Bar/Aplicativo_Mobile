@@ -9,36 +9,37 @@
 
 
 <ion-content>
-  <ion-card id="card">
-    <div *ngIf="apiLoaded | async">
-      <google-map height="400px"
-        width="700px"
-        [center]="center"
-        [zoom]="zoom"
-        (mapMousemove)="move($event)"
-        (mapClick)="addMarker($event)">
-        <map-marker *ngFor="let markerPosition of markerPositions"
-              [position]="markerPosition"
-              [options]="markerOptions"></map-marker>
-      </google-map>
+  <ion-grid>
+    <ion-row class="ion-align-items-end">
+      <ion-col class="ion-align-self-end">
+         <ion-card>  
+            <ion-item-sliding>
+              <ion-item>
+                <ion-label>Item</ion-label>
+              </ion-item>
+            </ion-item-sliding>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card>
+    <div class="form-group">
+      <ion-title>Procure a farmacia perto de você</ion-title>
+      <ion-input
+        type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+      </ion-input>
     </div>
-    <head>
-      <title>Geocoding Service</title>
-      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-      <script src="./index.js"></script>
-    </head>
-    <body>
-      <div id="floating-panel">
-        <input id="address" type="textbox" value="Sydney, NSW" />
-        <input id="submit" type="button" value="Geocode" />
-      </div>
-      <div id="map"></div>
-  
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI&callback=initMap&libraries=&v=weekly"
-        async
-      ></script>
-    </body>
-  </ion-card>          
+    <agm-map 
+      [latitude]="latitude" 
+      [longitude]="longitude" 
+      [zoom]="20" >
+        <agm-marker 
+        [latitude]="latitude" 
+        [longitude]="longitude"
+        [markerDraggable]="true"
+        (dragEnd)="markerDragEnd($event)"></agm-marker>
+    </agm-map>
+    <h5>Address: {{address}}</h5>
+  </ion-card>
 </ion-content>
 
