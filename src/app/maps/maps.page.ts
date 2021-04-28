@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import {  } from '@angular/google-maps';
+import { MapsService } from './maps.service';
 
 
 @Component({
@@ -25,11 +27,10 @@ export class MapsPage implements OnInit {
   addMarker(event: google.maps.MapMouseEvent) {
     this.markerPositions.push(event.latLng.toJSON());
   }
-  
 
   apiLoaded: Observable<boolean>;
 
-  constructor(httpClient: HttpClient) { 
+  constructor(httpClient: HttpClient, private geo: MapsService) { 
     this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI', 'callback')
         .pipe(
           map(() => true),

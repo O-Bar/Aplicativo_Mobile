@@ -23,6 +23,7 @@
     "@angular/router": "~11.2.0",
     "@capacitor/core": "2.4.7",
     "@ionic/angular": "^5.5.2",
+    "@types/googlemaps": "^3.43.1",
     "@ng-bootstrap/ng-bootstrap": "^9.1.0",
     "angular-calendar": "^0.28.22",
     "angularx-flatpickr": "^6.5.2",
