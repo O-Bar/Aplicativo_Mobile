@@ -7,7 +7,7 @@ import { MapsAPILoader } from '@agm/core';
   styleUrls: ['./maps.page.scss'],
 })
 export class MapsPage implements OnInit {
-  title: string = 'AGM project';
+  title: string = 'Meu remedio';
   latitude: number;
   longitude: number;
   zoom:number;
