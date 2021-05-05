@@ -9,24 +9,39 @@
 
 
 <ion-content>
-  <ion-card>
-    <div class="form-group">
-      <ion-title>Procure a farmacia perto de você</ion-title>
-      <input
-        type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
-    </div>
-      <agm-map 
-        [latitude]="latitude" 
-        [longitude]="longitude" 
-        [zoom]="20" >
-        <agm-marker 
-          [latitude]="latitude" 
-          [longitude]="longitude"
-          [markerDraggable]="true"
-          (dragEnd)="markerDragEnd($event)"></agm-marker>
-      </agm-map>
-      <h5>Address: {{address}}</h5>
+  <ion-card id="titulo2">
+    <ion-title color="light"><strong>Procure a farmacia perto de você</strong></ion-title>
   </ion-card>
-  <ion-button (click)="showModal()">teste</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <div class="form-group">
+          <input
+            type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+        </div>
+          <agm-map 
+            [latitude]="latitude" 
+            [longitude]="longitude" 
+            [zoom]="20" >
+            <agm-marker 
+              [latitude]="latitude" 
+              [longitude]="longitude"
+              [markerDraggable]="true"
+              (dragEnd)="markerDragEnd($event)"></agm-marker>
+          </agm-map>
+          <h5 color="dark"><strong>Address: {{address}}</strong></h5>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-text-start">
+        <ion-button size="full" class="ion-align-items-start" (click)="openModal()">
+          <ion-icon name="archive-outline"></ion-icon>
+          teste
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
