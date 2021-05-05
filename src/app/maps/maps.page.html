@@ -10,8 +10,28 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row class="ion-align-items-end">
-      <ion-col class="ion-align-self-end">
+    <ion-row>
+      <ion-col size="6">
+        <ion-card>
+          <div class="form-group">
+            <ion-title>Procure a farmacia perto de você</ion-title>
+            <input
+              type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+          </div>
+          <agm-map 
+            [latitude]="latitude" 
+            [longitude]="longitude" 
+            [zoom]="20" >
+              <agm-marker 
+              [latitude]="latitude" 
+              [longitude]="longitude"
+              [markerDraggable]="true"
+              (dragEnd)="markerDragEnd($event)"></agm-marker>
+          </agm-map>
+          <h5>Address: {{address}}</h5>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
          <ion-card>  
             <ion-item-sliding>
               <ion-item>
@@ -20,26 +40,8 @@
             </ion-item-sliding>
         </ion-card>
       </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-card>
-    <div class="form-group">
-      <ion-title>Procure a farmacia perto de você</ion-title>
-      <ion-input
-        type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
-      </ion-input>
-    </div>
-    <agm-map 
-      [latitude]="latitude" 
-      [longitude]="longitude" 
-      [zoom]="20" >
-        <agm-marker 
-        [latitude]="latitude" 
-        [longitude]="longitude"
-        [markerDraggable]="true"
-        (dragEnd)="markerDragEnd($event)"></agm-marker>
-    </agm-map>
-    <h5>Address: {{address}}</h5>
-  </ion-card>
+  
+</ion-row>
+</ion-grid>
 </ion-content>
 
