@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
-
+import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
+import { MapsAPILoader } from '@agm/core';
+import { ModalController } from '@ionic/angular';
+import { ListModalComponent } from '../list-modal/list-modal.component';
 
 @Component({
   selector: 'app-maps',
@@ -10,35 +9,80 @@ import { catchError, map } from 'rxjs/operators';
   styleUrls: ['./maps.page.scss'],
 })
 export class MapsPage implements OnInit {
-  center: google.maps.LatLngLiteral = {lat: -23.5489, lng: -46.6388};
-  zoom = 12;
-  display: google.maps.LatLngLiteral;
-  markerOptions: google.maps.MarkerOptions = {draggable: false};
-  markerPositions: google.maps.LatLngLiteral[] = [];
-  
-  moveMap(event: google.maps.MapMouseEvent) {
-    this.center = (event.latLng.toJSON());
-  }
-  move(event: google.maps.MapMouseEvent) {
-    this.display = event.latLng.toJSON();
-  }
-  addMarker(event: google.maps.MapMouseEvent) {
-    this.markerPositions.push(event.latLng.toJSON());
-  }
-  
+  title: string = 'Meu remedio';
+  latitude: number;
+  longitude: number;
+  zoom:number;
+  address: string;
+  private geoCoder;
 
-  apiLoaded: Observable<boolean>;
+  @ViewChild('search')
+  public searchElementRef: ElementRef;
+  
+  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private modalController: ModalController) { }
 
-  constructor(httpClient: HttpClient) { 
-    this.apiLoaded = httpClient.jsonp('https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI', 'callback')
-        .pipe(
-          map(() => true),
-          catchError(() => of(false)),
-        );
-        
-  }    
+  async openModal(){
+    const modal = await this.modalController.create({
+      component: ListModalComponent
+    });
+    await modal.present();
+  }
 
   ngOnInit() {
-   
+    this.mapsAPILoader.load().then(() => {
+      this.setCurrentLocation();
+      this.geoCoder = new google.maps.Geocoder;
+
+      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+            //set latitude, longitude and zoom
+            this.latitude = place.geometry.location.lat();
+            this.longitude = place.geometry.location.lng();
+            this.zoom = 12;
+          });
+        });
+      });
   }
-}
+  private setCurrentLocation() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+        this.zoom = 50;
+        this.getAddress(this.latitude, this.longitude);
+      });
+    }
+  }
+  markerDragEnd($event: google.maps.MouseEvent) {
+    console.log($event);
+    this.latitude = $event.latLng.lat();
+    this.longitude = $event.latLng.lng();
+    this.getAddress(this.latitude, this.longitude);
+  }
+  getAddress(latitude, longitude) {
+    this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
+      console.log(results);
+      console.log(status);
+      if (status === 'OK') {
+        if (results[0]) {
+          this.zoom = 12;
+          this.address = results[0].formatted_address;
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+
+    });
+  }
+}    
+

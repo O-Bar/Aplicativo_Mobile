@@ -9,36 +9,39 @@
 
 
 <ion-content>
-  <ion-card id="card">
-    <div *ngIf="apiLoaded | async">
-      <google-map height="400px"
-        width="700px"
-        [center]="center"
-        [zoom]="zoom"
-        (mapMousemove)="move($event)"
-        (mapClick)="addMarker($event)">
-        <map-marker *ngFor="let markerPosition of markerPositions"
-              [position]="markerPosition"
-              [options]="markerOptions"></map-marker>
-      </google-map>
-    </div>
-    <head>
-      <title>Geocoding Service</title>
-      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-      <script src="./index.js"></script>
-    </head>
-    <body>
-      <div id="floating-panel">
-        <input id="address" type="textbox" value="Sydney, NSW" />
-        <input id="submit" type="button" value="Geocode" />
-      </div>
-      <div id="map"></div>
-  
-      <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI&callback=initMap&libraries=&v=weekly"
-        async
-      ></script>
-    </body>
-  </ion-card>          
+  <ion-card id="titulo2">
+    <ion-title color="light"><strong>Procure a farmacia perto de você</strong></ion-title>
+  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <div class="form-group">
+          <input
+            type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+        </div>
+          <agm-map 
+            [latitude]="latitude" 
+            [longitude]="longitude" 
+            [zoom]="20" >
+            <agm-marker 
+              [latitude]="latitude" 
+              [longitude]="longitude"
+              [markerDraggable]="true"
+              (dragEnd)="markerDragEnd($event)"></agm-marker>
+          </agm-map>
+          <h5 color="dark"><strong>Address: {{address}}</strong></h5>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col class="ion-text-start">
+        <ion-button size="full" class="ion-align-items-start" (click)="openModal()">
+          <ion-icon name="archive-outline"></ion-icon>
+          teste
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
