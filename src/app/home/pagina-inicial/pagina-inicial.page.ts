@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-pagina-inicial',
   templateUrl: './pagina-inicial.page.html',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaInicialPage implements OnInit {
 
+  ppublic remedios: Remedio[];
+
   constructor() { }
 
   ngOnInit() {
   }
+
+ 
 
 }
