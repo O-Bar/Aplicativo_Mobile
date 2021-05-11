@@ -8,12 +8,15 @@ import { PaginaInicialPageRoutingModule } from './pagina-inicial-routing.module'
 
 import { PaginaInicialPage } from './pagina-inicial.page';
 
+import { IonicStorageModule } from '@ionic/storage-angular';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PaginaInicialPageRoutingModule
+    PaginaInicialPageRoutingModule,
+    IonicStorageModule.forRoot()
   ],
   declarations: [PaginaInicialPage]
 })
