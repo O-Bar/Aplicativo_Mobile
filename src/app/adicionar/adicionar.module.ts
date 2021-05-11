@@ -8,6 +8,7 @@ import { AdicionarPageRoutingModule } from './adicionar-routing.module';
 
 import { AdicionarPage } from './adicionar.page';
 import { ComponentsModule } from '../components/components.module';
+import { RemedioFormComponent } from '../components/remedio-form/remedio-form.component';
 
 @NgModule({
   imports: [

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Remedio, RemedioService } from 'src/app/services/remedio.service';
+
 
 
 @Component({
@@ -8,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaInicialPage implements OnInit {
 
-  ppublic remedios: Remedio[];
+  public remedios: Remedio[];
 
-  constructor() { }
+  constructor(private remedioService: RemedioService) {
+    this.remedios = this.remedioService.allRemedios;
+   }
 
   ngOnInit() {
   }

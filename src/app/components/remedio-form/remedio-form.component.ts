@@ -9,11 +9,12 @@ export class RemedioFormComponent implements OnInit {
 
   @Input() remedio;
   @Output() remedioSaved = new EventEmitter();
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  public onClick(){
+  public onClick() {
     this.remedioSaved.emit();
   }
 }

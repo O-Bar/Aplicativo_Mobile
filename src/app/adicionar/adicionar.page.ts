@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-
-interface Remedio {
-  name: string;
-  dose: string;
-  hora: Date;
-  done: boolean;
-  id: number;
-}
+import { NavController } from '@ionic/angular';
+import { Remedio, RemedioService } from 'src/app/services/remedio.service';
 
 @Component({
   selector: 'app-adicionar',
@@ -17,34 +11,20 @@ export class AdicionarPage {
 
   public emptyRemedio = {
     name: '',
-    dose: '',
-    hora: ''
+    dose: ''
   };
 
-  public novoRemedioNome = '';
-  public novaDoseRemedio = '';
-  public novaHoraRemedio;
+  constructor(
+    private remedioService: RemedioService,
+    private navCtrl: NavController
+  ) { }
 
-
-  public remedios: Remedio[] = [];
- 
-
-
-  public addRemedio() {
-    const newRemedio = {
-      name: this.novoRemedioNome,
-      dose: this.novaDoseRemedio,
-      hora: this.novaHoraRemedio,
-      done: false,
-      id: new Date().getTime()
-    };
-    this.remedios.push(newRemedio);
-    this.novoRemedioNome = '';
+  ngOnInit() {
   }
 
-  public removeRemedio(id: number) {
-    const remedioIndex = this.remedios.findIndex(remedio => remedio.id === id);
-    this.remedios.splice(remedioIndex, 1);
+  createRemedio() { 
+    this.remedioService.addRemedio(this.emptyRemedio);
+    this.navCtrl.back();
   }
 
 }
