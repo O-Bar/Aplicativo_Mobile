@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { RemedioService } from '../services/remedio.service';
 
 @Component({
@@ -13,13 +14,17 @@ export class AdicionarPage implements OnInit {
     dose: '',
     hora: ''
   };
-  constructor(private remedioService: RemedioService) { }
+  constructor(
+    private remedioService: RemedioService,
+    private navCtrl: NavController
+    ) { }
 
   ngOnInit() {
   }
 
   createRemedio(){
     this.remedioService.addRemedio(this.emptyRemedio);
+    this.navCtrl.back();
   }
 
 }

@@ -12,15 +12,22 @@
 
 <ion-content class="ion-padding">
 
-  <ion-list>
-    <ion-item *ngFor='let remedio of remedios'>
-      <ion-label>
-        <h2>{{remedio.name}}</h2>
-        <h3>{{remedio.dose}}</h3>
-        <h4>{{remedio.hora}}</h4>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-card color="primary" class="ion-padding" class="cardRemedio">
+    <ion-list *ngIf="remedios.length > 0; else emptyRemedios">
+      <ion-item *ngFor='let remedio of remedios'>
+        <ion-label>
+          <h2>{{remedio.name}}</h2>
+          <h3>{{remedio.dose}}</h3>
+          <h4>{{remedio.hora}}</h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-template #emptyRemedios>
+      <ion-text color="medium" class="ion-text-center">
+        <p><strong>Adicione os seus remedios</strong></p>
+      </ion-text>
+    </ng-template>
+  </ion-card>
 
   <ion-fab routerLink="/adicionar" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button>
@@ -28,10 +35,5 @@
     </ion-fab-button>
   </ion-fab>
 
-  <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia
-  <ion-text color="medium" class="ion-text-center">
-    <p>Adicione seu remédio e a dose</p>
-    Mostra esse texto-->
-  <!--</ion-text> -->
 
 </ion-content>
