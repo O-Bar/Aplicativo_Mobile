@@ -12,18 +12,20 @@
 
 <ion-content class="ion-padding">
 
-  <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia-->
+  <ion-list>
+    <ion-item *ngFor='let remedio of remedios'>
+      <ion-label>
+        <h2>{{remedio.nome}}</h2>
+        <h3>{{remedio.dose}}</h3>
+        <p>{{remedio.hora}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia
   <ion-text color="medium" class="ion-text-center">
     <p>Adicione seu remédio e a dose</p>
-    <!--Mostra esse texto-->
-  </ion-text>
-
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="auto">
-      <ion-button expand="block" color="tertiary" routerLink='/maps'>
-        Acabou seu remédio? Saiba onde comprar
-      </ion-button>
-    </ion-col>
-  </ion-row>
+    Mostra esse texto-->
+  <!--</ion-text> -->
 
 </ion-content>
