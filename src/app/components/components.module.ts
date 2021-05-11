@@ -12,6 +12,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     IonicModule,
     FormsModule
+  ],
+  exports: [
+    RemedioFormComponent
   ]
 })
 export class ComponentsModule { }
