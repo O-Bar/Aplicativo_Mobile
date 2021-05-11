@@ -13,9 +13,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'maps',
-    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+    path: 'adicionar',
+    loadChildren: () => import('./adicionar/adicionar.module').then( m => m.AdicionarPageModule)
   },
+
+  
 ];
 
 @NgModule({
