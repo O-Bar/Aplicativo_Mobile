@@ -15,12 +15,18 @@
   <ion-list>
     <ion-item *ngFor='let remedio of remedios'>
       <ion-label>
-        <h2>{{remedio.nome}}</h2>
+        <h2>{{remedio.name}}</h2>
         <h3>{{remedio.dose}}</h3>
-        <p>{{remedio.hora}}</p>
+        <h4>{{remedio.hora}}</h4>
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ion-fab routerLink="/adicionar" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
   <!--Se o tamanho da "lista" de tarefas não for maior que 0, ou seja, se ela estiver vazia
   <ion-text color="medium" class="ion-text-center">

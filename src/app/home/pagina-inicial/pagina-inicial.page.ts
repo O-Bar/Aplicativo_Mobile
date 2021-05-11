@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Remedio {
-  name: string;
-  dose: string;
-  hora: string;
-}[]
-
+import { Remedio, RemedioService } from 'src/app/services/remedio.service';
+ 
 @Component({
   selector: 'app-pagina-inicial',
   templateUrl: './pagina-inicial.page.html',
@@ -16,20 +11,12 @@ export class PaginaInicialPage implements OnInit {
   ngOnInit() {
   }
 
-  public remedios: Remedio[] = [
-    {
-      name: 'dipirona',
-      dose: "1 pipula",
-      hora: '10:30'
-    }, {
-      name: 'dorflex',
-      dose: '1 comprimido',
-      hora: '17:00'
-    }
-  ]
+  public remedios: Remedio[];
 
 
-  constructor() { }
+  constructor(private remdioService: RemedioService) {
+    this.remedios = this.remdioService.allRemedios;
+   }
   
 
 }

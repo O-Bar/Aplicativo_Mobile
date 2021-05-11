@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-button>
+    <ion-title>
+      <ion-row  class="ion-padding">
+        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
+        <ion-col id="titulo" size="auto"><strong>Adicionar Remédio</strong></ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <app-remedio-form [remedio]="emptyRemedio" (remedioSaved)="createRemedio()"></app-remedio-form>
+
+</ion-content>
