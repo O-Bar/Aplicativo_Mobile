@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
+import { ModalController } from '@ionic/angular';
+import { ListModalComponent } from '../list-modal/list-modal.component';
 
 @Component({
   selector: 'app-maps',
@@ -7,7 +9,7 @@ import { MapsAPILoader } from '@agm/core';
   styleUrls: ['./maps.page.scss'],
 })
 export class MapsPage implements OnInit {
-  title: string = 'AGM project';
+  title: string = 'Meu remedio';
   latitude: number;
   longitude: number;
   zoom:number;
@@ -17,7 +19,14 @@ export class MapsPage implements OnInit {
   @ViewChild('search')
   public searchElementRef: ElementRef;
   
-  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone) { }
+  constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone, private modalController: ModalController) { }
+
+  async openModal(){
+    const modal = await this.modalController.create({
+      component: ListModalComponent
+    });
+    await modal.present();
+  }
 
   ngOnInit() {
     this.mapsAPILoader.load().then(() => {

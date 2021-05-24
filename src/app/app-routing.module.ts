@@ -16,7 +16,11 @@ const routes: Routes = [
     path: 'maps',
     loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
   },
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 64822f15eff99fcd822343dd20b5b62b546a2df7
 ];
 
 @NgModule({

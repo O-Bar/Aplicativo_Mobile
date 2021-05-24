@@ -9,6 +9,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { MapsPageRoutingModule } from './maps-routing.module';
 
 import { MapsPage } from './maps.page';
+import { ListModalComponent } from '../list-modal/list-modal.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { MapsPage } from './maps.page';
       libraries: ['places']
     }) 
   ],
-  declarations: [MapsPage]
+  declarations: [MapsPage,ListModalComponent],
+  entryComponents: [ListModalComponent]
 })
 export class MapsPageModule {}
    

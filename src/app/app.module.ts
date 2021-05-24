@@ -21,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI',
       libraries: ['places']
-    }) 
+    }), 
      ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
