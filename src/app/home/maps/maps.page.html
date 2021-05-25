@@ -11,5 +11,24 @@
 
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <div class="form-group">
+          <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Digite aqui" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+        </div>
+          <agm-map 
+            [latitude]="latitude" 
+            [longitude]="longitude" 
+            [zoom]="20" >
+            <agm-marker 
+              [latitude]="latitude" 
+              [longitude]="longitude"
+              [markerDraggable]="true"
+              (dragEnd)="markerDragEnd($event)"></agm-marker>
+          </agm-map>
+          <h5 color="dark"><strong>Address: {{address}}</strong></h5>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
 </ion-content>
