@@ -12,6 +12,10 @@ const routes: Routes = [
         loadChildren: () => import('./pagina-inicial/pagina-inicial.module').then( m => m.PaginaInicialPageModule)
       },
       {
+        path: 'maps',
+        loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+      },
+      {
         path: 'ajuda',
         loadChildren: () => import('./ajuda/ajuda.module').then( m => m.AjudaPageModule)
       },
@@ -26,6 +30,8 @@ const routes: Routes = [
       },
     ]
   },
+
+
   
 
 ];
