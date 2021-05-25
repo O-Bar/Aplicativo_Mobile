@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-row  class="ion-padding">
+        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
+        <ion-col id="titulo" size="auto"><strong>Meu Remédio</strong></ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+
+  <ion-card color="primary" class="ion-padding" class="cardRemedio">
+    <ion-list *ngIf="remedios.length > 0; else emptyRemedios">
+      <ion-item *ngFor='let remedio of remedios'>
+        <ion-label>
+          <h2>{{remedio.name}}</h2>
+          <h3>{{remedio.dose}}</h3>
+          <h4>{{remedio.hora}}</h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    <ng-template #emptyRemedios>
+      <ion-text color="medium" class="ion-text-center">
+        <p><strong>Adicione os seus remedios</strong></p>
+      </ion-text>
+    </ng-template>
+  </ion-card>
+
+  <ion-fab routerLink="/adicionar" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>
