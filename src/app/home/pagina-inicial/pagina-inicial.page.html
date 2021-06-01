@@ -13,11 +13,14 @@
 <ion-content class="ion-padding">
 
   <ion-card color="primary" class="ion-padding" class="cardRemedio">
-    <ion-list *ngIf="remedios.length > 0; else emptyRemedios">
-      <ion-item *ngFor='let remedio of remedios'>
+    <ion-list *ngIf="remedios.length > 0; else emptyRemedios" class="listRemedio">
+      <ion-item *ngFor='let remedio of remedios'  color= "dark">
         <ion-label>
-          <h2>{{remedio.name}}</h2>
-          <h3>{{remedio.dose}}</h3>
+          <h3>Remédio</h3>
+          <h4>{{remedio.name}}</h4>
+          <h3>Dose</h3>
+          <h4>{{remedio.dose}}</h4>
+          <h3>Horário</h3>
           <h4>{{remedio.hora}}</h4>
         </ion-label>
       </ion-item>

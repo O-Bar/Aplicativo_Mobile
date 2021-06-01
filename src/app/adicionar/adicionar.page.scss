@@ -1,22 +1,24 @@
 ion-toolbar ion-title img {
-  height: 1.5em;
+  height: 1.4em;
   display: block;
-  width: 1.5em;
+  width: 1.4em;
+  margin-left: 0cm;
 }
+
+.button {
+  --width: 10px;
+  --height: 10px;
+  --padding-start: 2.5px;
+  --padding-end: 2.5px;
+}
+
 ion-title{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20pt;
+  font-size: 14pt;
   font-weight: normal; 
   margin: 0; //para alinhar
 }
 
 ion-content {
   --background: url('https://static.vecteezy.com/ti/vetor-gratis/p1/1843071-roxo-escuro-rosa-desfocado-vetor.jpg') no-repeat center center / cover !important;
-}
-
-p{
-  font-size: 16pt;
-  font-weight: bold; 
-  margin: 0; //para alinhar
-  color: gray;
 }
