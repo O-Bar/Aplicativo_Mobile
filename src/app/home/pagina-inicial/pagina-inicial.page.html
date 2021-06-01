@@ -14,7 +14,7 @@
 
   <ion-card class="ion-padding" class="cardRemedio">
     <ion-list *ngIf="remedios.length > 0; else emptyRemedios" class="listRemedio">
-      <ion-item *ngFor='let remedio of remedios' color="primary">
+      <ion-item *ngFor='let remedio of remedios'  color= "dark">
         <ion-label>
           <h3>Remédio</h3>
           <h4>{{remedio.name}}</h4>
