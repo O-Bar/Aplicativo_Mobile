@@ -1,11 +1,22 @@
 ion-toolbar ion-title img {
-  height: 1.5em;
+  height: 1.4em;
   display: block;
-  width: 1.5em;
+  width: 1.4em;
+  margin-left: 0cm;
 }
+
+.button {
+  --width: 10px;
+  --height: 10px;
+  --padding-start: 2.5px;
+  --padding-end: 2.5px;
+}
+
+
+
 ion-title{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20pt;
+  font-size: 14pt;
   font-weight: normal; 
   margin: 0; //para alinhar
 }
