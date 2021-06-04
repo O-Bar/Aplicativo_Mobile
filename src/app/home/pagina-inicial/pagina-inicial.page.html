@@ -41,13 +41,18 @@
     </ion-fab-button>
   </ion-fab>
 
-  <ion-footer>
-    <ion-toolbar>
-      <ion-title>
-        <ion-buttons></ion-buttons>
-      </ion-title>
-    </ion-toolbar>
-  </ion-footer>
+  
 
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>
+      <ion-buttons (click)= "logout()">
+        Efetuar logout
+        <ion-icon slot="start" name="exit"></ion-icon>
+      </ion-buttons>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

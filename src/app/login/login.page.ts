@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import firebase from 'firebase/app'
 
 @Component({
@@ -9,7 +10,7 @@ import firebase from 'firebase/app'
 })
 export class LoginPage implements OnInit {
 
-  constructor(private auth: AngularFireAuth) { }
+  constructor(private auth: AngularFireAuth, private router: Router) { }
 
   ngOnInit() {
   }
@@ -19,7 +20,9 @@ export class LoginPage implements OnInit {
         new firebase.auth.GoogleAuthProvider()
       )
       console.log(result)
-
+        if (result){
+          this.router.navigateByUrl('/home/pagina-inicial');
+        }
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { Remedio, RemedioService } from 'src/app/services/remedio.service';
 
 
@@ -15,9 +17,18 @@ export class PaginaInicialPage implements OnInit {
   public remedios: Remedio[];
 
 
-  constructor(private remdioService: RemedioService) {
+  constructor(private remdioService: RemedioService,
+     private afa: AngularFireAuth,
+     private router: Router
+     ) {
     this.remedios = this.remdioService.allRemedios;
    }
-  
+
+
+  public async logout(){
+    await this.afa.signOut();
+    this.router.navigateByUrl('/login')
+
+  }
 
 }
