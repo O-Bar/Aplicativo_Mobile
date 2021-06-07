@@ -17,7 +17,7 @@
 
   <ion-card class="ion-padding" class="cardRemedio">
     <ion-list *ngIf="remedios.length > 0; else emptyRemedios" class="listRemedio">
-      <ion-item *ngFor='let remedio of remedios'  color= "dark">
+      <ion-item *ngFor='let remedio of remedios'  color= "dark" (click)="openModal()">
         <ion-label>
           <h3>Remédio</h3>
           <h4>{{remedio.name}}</h4>
@@ -30,7 +30,7 @@
     </ion-list>
     <ng-template #emptyRemedios>
       <ion-text color="medium" class="ion-text-center">
-        <p><strong>Adicione os seus remedios</strong></p>
+        <p><strong>Adicione os seus remédios</strong></p>
       </ion-text>
     </ng-template>
   </ion-card>
@@ -50,8 +50,9 @@
   <ion-toolbar>
     <ion-title>
       <ion-buttons (click)= "logout()">
-        Efetuar logout
         <ion-icon slot="start" name="exit"></ion-icon>
+        Efetuar logout
+        
       </ion-buttons>
     </ion-title>
   </ion-toolbar>
