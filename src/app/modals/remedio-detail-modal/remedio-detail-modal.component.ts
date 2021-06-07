@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-remedio-detail-modal',
@@ -7,6 +8,8 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./remedio-detail-modal.component.scss'],
 })
 export class RemedioDetailModalComponent implements OnInit {
+
+  @Input() remedio;
 
   constructor(private modalController: ModalController) { }
 

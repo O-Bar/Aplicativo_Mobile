@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { RemedioDetailModalComponent } from 'src/app/modals/remedio-detail-modal/remedio-detail-modal.component';
 import { Remedio, RemedioService } from 'src/app/services/remedio.service';
-
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -34,9 +33,12 @@ export class PaginaInicialPage implements OnInit {
 
   }
 
-  public async openModal(){
+  public async openModal(remedio : Remedio){
     const modal = await this.modalController.create({
-      component: RemedioDetailModalComponent
+      component: RemedioDetailModalComponent,
+      componentProps: {
+        remedio : remedio
+      }
     });
     modal.present();
   }
