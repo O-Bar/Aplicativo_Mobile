@@ -8,7 +8,7 @@
     <ion-title>
       <ion-row  class="ion-padding">
         <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
-        <ion-col id="titulo" size="auto"><strong>Meu Remédio</strong>
+        <ion-col id="titulo" size="auto"><strong>Detalhes</strong>
         </ion-col>
         
       </ion-row>
@@ -17,8 +17,8 @@
 </ion-header>
 <ion-content>
   
-    <ion-list >
-      <ion-item >
+    <ion-list class="listRemedio">
+      <ion-item color="dark">
         <ion-label>
           <h3>Remédio</h3>
           <h4>{{remedio.name}}</h4>
@@ -29,5 +29,10 @@
         </ion-label>
       </ion-item>
     </ion-list>
+
+    <ion-button expand="block" color="tertiary" routerLink="/edit">
+        <ion-icon name="create"></ion-icon>
+        Editar
+    </ion-button>
 
 </ion-content>

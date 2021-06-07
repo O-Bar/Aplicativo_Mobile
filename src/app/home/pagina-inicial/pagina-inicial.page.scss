@@ -15,7 +15,7 @@ ion-toolbar ion-title img {
   }
   
   h3{
-    font-size: 9pt;
+    font-size: 10pt;
     margin: 0; //para alinhar
     color: rgba(192, 192, 192, 0.885);
   }
@@ -23,6 +23,11 @@ ion-toolbar ion-title img {
     font-size: 12pt;
     margin: 0; //para alinhar
     color: rgb(255, 253, 253);
+  }
+  h6{
+    font-size: 8pt;
+    margin: 0; //para alinhar
+    color: rgba(192, 192, 192, 0.885);
   }
   .cardRemedio {
     background: rgba(15,8,33,0.7);
