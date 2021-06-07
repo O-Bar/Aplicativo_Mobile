@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-title>
-      <ion-row  class="ion-padding">
-        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
+      <ion-row class="ion-padding">
+        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png"
+            alt=""></ion-col>
         <ion-col id="titulo" size="auto"><strong>Meu Remédio</strong>
         </ion-col>
-        
+
       </ion-row>
     </ion-title>
   </ion-toolbar>
@@ -17,7 +18,7 @@
 
   <ion-card class="ion-padding" class="cardRemedio">
     <ion-list *ngIf="remedios.length > 0; else emptyRemedios" class="listRemedio">
-      <ion-item *ngFor='let remedio of remedios'  color= "dark" (click)="openModal(remedio)">
+      <ion-item *ngFor='let remedio of remedios' color="dark" (click)="openModal(remedio)">
         <ion-label>
           <h3>Remédio</h3>
           <h4>{{remedio.name}}</h4>
@@ -41,20 +42,12 @@
     </ion-fab-button>
   </ion-fab>
 
+
   
-   
-      <ion-button (click)= "logout()" vertical="bottom" expand="block" color= >
-        <ion-icon slot="start" name="exit"></ion-icon>
-        Efetuar logout
-        
-      </ion-button>
-    
+  <ion-button (click)="logout()" vertical="bottom" expand="block" color="tertiary">
+    <ion-icon slot="start" name="exit"></ion-icon>
+    Efetuar logout
+  </ion-button>
+
 
 </ion-content>
-
-
-  
-    
-   
-  
-
