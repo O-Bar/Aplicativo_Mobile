@@ -17,6 +17,7 @@
     </ion-card-header>
       
      <ion-card-content>
+      <ion-icon slot="right" name="help-circle-sharp"></ion-icon>
       <app-expandable expandHeight="100px" [expanded]="item.expanded">
         <h1>
           Vá para página incial e lá você encontrará um botão para editar alguma informação sobre seu medicamento
@@ -24,7 +25,7 @@
       </app-expandable>
     </ion-card-content>
   </ion-card>
-  <ion-card (click)="expandItem2(item2)" *ngFor="let item of items2">
+  <ion-card (click)="expandItem2(item2)" *ngFor="let item2 of items2">
     <ion-card-header>
       <ion-card-title>Como adicionar um medicamento ?</ion-card-title>
     </ion-card-header>
@@ -38,7 +39,7 @@
       </app-expandable>
     </ion-card-content>
   </ion-card>
-  <ion-card (click)="expandItem3(item3)" *ngFor="let item of items3">
+  <ion-card (click)="expandItem3(item3)" *ngFor="let item3 of items3">
     <ion-card-header>
       <ion-card-title>Como localizar farmácias próximo a minha localização?</ion-card-title>
     </ion-card-header>

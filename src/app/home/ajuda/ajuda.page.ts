@@ -55,7 +55,7 @@ export class AjudaPage  {
     if (item3.expanded) {
       item3.expanded = false;
     } else {
-      this.items2.map(listItem3 => {
+      this.items3.map(listItem3 => {
         if (item3 == listItem3) {
           listItem3.expanded = !listItem3.expanded;
         } else {
