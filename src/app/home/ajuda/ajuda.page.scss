@@ -15,17 +15,25 @@ ion-toolbar ion-title img {
 #titulo {
   color:  #ffffff;
 }
-.cardAjuda {
+ion-card {
   background: rgba(15,8,33,0.7);
 }
 
 ion-card ion-card-title{
-  color: rgba(8, 0, 0, 0.993);
+  font-size: 12pt;
+  margin: 0; //para alinhar
+  color: white;
 }
 ion-card ion-card-subtitle{
   color: gray;
 }
 
 ion-card ion-card-content{
+  color: rgb(187, 187, 187);
+}
+
+h1{
+  font-size: 9pt;
+  margin: 0; //para alinhar
   color: rgb(187, 187, 187);
 }

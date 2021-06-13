@@ -15,45 +15,40 @@
     <ion-card-header>
       <ion-card-title>Como editar um medicamento?</ion-card-title>
     </ion-card-header>
-      
-     <ion-card-content>
-      <ion-icon slot="right" name="help-circle-sharp"></ion-icon>
+    <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item.expanded">
         <h1>
-          Vá para página incial e lá você encontrará um botão para editar alguma informação sobre seu medicamento
+          Vá para Página Incial e lá você encontrará um botão para editar alguma informação sobre seu medicamento.
         </h1>
       </app-expandable>
     </ion-card-content>
   </ion-card>
+
   <ion-card (click)="expandItem2(item2)" *ngFor="let item2 of items2">
     <ion-card-header>
       <ion-card-title>Como adicionar um medicamento ?</ion-card-title>
     </ion-card-header>
-      
-     <ion-card-content>
+    <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item2.expanded">
         <h1>
-          Selecione o botão Página inicial, em seguida clique no botão com o sinal de (+) e adicione seu medicamento nos campos que aparecem.
+          Vá para Página inicial, em seguida clique no botão de + no canto inferior direito e adicione as informações
+          sobre seu remédio.
         </h1>
-        
       </app-expandable>
     </ion-card-content>
   </ion-card>
+  
   <ion-card (click)="expandItem3(item3)" *ngFor="let item3 of items3">
     <ion-card-header>
-      <ion-card-title>Como localizar farmácias próximo a minha localização?</ion-card-title>
+      <ion-card-title>Como encontrar farmácias próximo a minha localização?</ion-card-title>
     </ion-card-header>
-      
-     <ion-card-content>
+    <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item3.expanded">
         <h1>
-          Vá no botão escrito Farmácias ao redor e coloque seu endereço, o aplicativo mostrará farmácias perto da sua localização
+          Vá para Farmácias ao Redor e lá insira seu endereço, o aplicativo mostrará farmácias perto da sua localização.
         </h1>
-        
       </app-expandable>
     </ion-card-content>
   </ion-card>
-
-
 
 </ion-content>
