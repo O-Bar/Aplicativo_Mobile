@@ -25,7 +25,9 @@ ion-card ion-card-title{
   color: white;
 }
 ion-card ion-card-subtitle{
-  color: gray;
+  font-size: 8pt;
+  margin: 0; //para alinhar
+  color: rgba(128, 128, 128, 0.501);
 }
 
 ion-card ion-card-content{
@@ -33,7 +35,7 @@ ion-card ion-card-content{
 }
 
 h1{
-  font-size: 9pt;
+  font-size: 10pt;
   margin: 0; //para alinhar
   color: rgb(187, 187, 187);
 }

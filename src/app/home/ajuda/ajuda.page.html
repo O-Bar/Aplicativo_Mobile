@@ -14,6 +14,7 @@
   <ion-card (click)="expandItem(item)" *ngFor="let item of items">
     <ion-card-header>
       <ion-card-title>Como editar um medicamento?</ion-card-title>
+      <ion-card-subtitle *ngIf="!item.expanded">Clique para expandir</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item.expanded">
@@ -27,6 +28,7 @@
   <ion-card (click)="expandItem2(item2)" *ngFor="let item2 of items2">
     <ion-card-header>
       <ion-card-title>Como adicionar um medicamento ?</ion-card-title>
+      <ion-card-subtitle *ngIf="!item2.expanded">Clique para expandir</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item2.expanded">
@@ -37,10 +39,11 @@
       </app-expandable>
     </ion-card-content>
   </ion-card>
-  
+
   <ion-card (click)="expandItem3(item3)" *ngFor="let item3 of items3">
     <ion-card-header>
       <ion-card-title>Como encontrar farmácias próximo a minha localização?</ion-card-title>
+      <ion-card-subtitle *ngIf="!item3.expanded">Clique para expandir</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
       <app-expandable expandHeight="100px" [expanded]="item3.expanded">
