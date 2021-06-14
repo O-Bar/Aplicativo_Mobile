@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { RemedioService } from 'src/app/services/remedio.service';
 
 
 @Component({
@@ -11,11 +12,19 @@ export class RemedioDetailModalComponent implements OnInit {
 
   @Input() remedio;
 
-  constructor(private modalController: ModalController) { }
+  constructor(
+    private modalController: ModalController,
+    private remedioService: RemedioService
+    ) { }
 
   ngOnInit() {}
 
   closeModal(){
+    this.modalController.dismiss();
+  }
+
+  deleteRemedio(){
+    this.remedioService.removeRemedio(this.remedio);
     this.modalController.dismiss();
   }
 

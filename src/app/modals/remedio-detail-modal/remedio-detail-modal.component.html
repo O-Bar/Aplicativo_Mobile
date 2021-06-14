@@ -30,9 +30,9 @@
       </ion-item>
     </ion-list>
 
-    <ion-button expand="block" color="tertiary" routerLink="/edit">
-        <ion-icon name="create"></ion-icon>
-        Editar
+
+    <ion-button expand="block" color="tertiary" (click)="deleteRemedio(remedio.id)">
+        Excluir remédio
     </ion-button>
 
 </ion-content>

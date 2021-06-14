@@ -12,7 +12,8 @@ export class AdicionarPage implements OnInit {
   public emptyRemedio = {
     name: '',
     dose: '',
-    hora: ''
+    hora: '',
+    id: null,
   };
   constructor(
     private remedioService: RemedioService,

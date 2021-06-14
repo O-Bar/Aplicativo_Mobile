@@ -5,6 +5,7 @@ export interface Remedio {
   name: string;
   dose: string;
   hora: string;
+  id: number;
 }
 
 @Injectable({
@@ -28,4 +29,12 @@ export class RemedioService {
 
     this.storage.set('remedios', this.allRemedios);
   }
+
+  public removeRemedio(id: number){
+    const remedioIndex = this.allRemedios.findIndex(remedio => remedio.id === id);
+    this.allRemedios.splice(remedioIndex, 1);
+    this.storage.set('remedios', this.allRemedios);
+  }
+    
+
 }
