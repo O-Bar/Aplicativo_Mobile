@@ -23,7 +23,7 @@ export class RemedioDetailModalComponent implements OnInit {
     this.modalController.dismiss();
   }
 
-  public deleteRemedio(){
+  deleteRemedio(){
     this.remedioService.removeRemedio(this.remedio);
     this.modalController.dismiss();
   }
