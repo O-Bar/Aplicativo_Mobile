@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+    <ion-button (click)="closeModal()">
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    <ion-title>
+      <ion-row  class="ion-padding">
+        <ion-col size="auto"><img src="https://cdn.pixabay.com/photo/2018/06/24/17/34/medical-3495036_960_720.png" alt=""></ion-col>
+        <ion-col id="titulo" size="auto"><strong>Detalhes</strong>
+        </ion-col>
+        
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+    <ion-list class="listRemedio">
+      <ion-item color="dark">
+        <ion-label>
+          <h3>Remédio</h3>
+          <h4>{{remedio.name}}</h4>
+          <h3>Dose</h3>
+          <h4>{{remedio.dose}}</h4>
+          <h3>Horário</h3>
+          <h4>{{remedio.hora}}</h4>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" color="tertiary" routerLink="/edit">
+        <ion-icon name="create"></ion-icon>
+        Editar
+    </ion-button>
+
+</ion-content>

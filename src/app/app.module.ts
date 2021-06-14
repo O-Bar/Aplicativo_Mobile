@@ -7,6 +7,8 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +17,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
     IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAV8JNLGGLWj9V77RPLh4GQtz2z7oeNDhI',
