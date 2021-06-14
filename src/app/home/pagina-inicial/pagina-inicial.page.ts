@@ -18,12 +18,13 @@ export class PaginaInicialPage implements OnInit {
   public remedios: Remedio[];
 
 
-  constructor(private remdioService: RemedioService,
+  constructor(
      private afa: AngularFireAuth,
      private router: Router,
-     private modalController: ModalController
+     private modalController: ModalController,
+     private remedioService: RemedioService
      ) {
-    this.remedios = this.remdioService.allRemedios;
+    this.remedios = this.remedioService.allRemedios;
    }
 
 
