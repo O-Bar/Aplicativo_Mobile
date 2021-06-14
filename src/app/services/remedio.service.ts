@@ -28,4 +28,14 @@ export class RemedioService {
 
     this.storage.set('remedios', this.allRemedios);
   }
+
+  public removeRemedio(name: string){
+    let remedioIndex
+    for (let i = 0; i < this.allRemedios.length; i++) {
+      if (name === this.allRemedios[i].name) {
+        remedioIndex = i;
+        break;
+      }
+    }
+  }
 }
