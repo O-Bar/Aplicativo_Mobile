@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PaginaInicialPageRoutingModule } from './pagina-inicial-routing.module';
 
 import { PaginaInicialPage } from './pagina-inicial.page';
+import { RemedioDetailModalComponent } from 'src/app/modals/remedio-detail-modal/remedio-detail-modal.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { PaginaInicialPage } from './pagina-inicial.page';
     IonicModule,
     PaginaInicialPageRoutingModule
   ],
-  declarations: [PaginaInicialPage]
+  declarations: [PaginaInicialPage, RemedioDetailModalComponent]
 })
 export class PaginaInicialPageModule {}
