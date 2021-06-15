@@ -5,7 +5,7 @@ ion-toolbar ion-title img {
   }
   ion-title{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20pt;
+    font-size: 16pt;
     font-weight: normal; 
     margin: 0; //para alinhar
   }
@@ -23,3 +23,15 @@ ion-toolbar ion-title img {
     text-align: center;
     color: white;
   }
+  .logo {
+    width: 200px;
+    height:200px;
+    position:fixed;
+    top:30%;
+    left:35%;
+    margin-top:-50px;
+    margin-left:-50px;
+  }
+
+  
+  

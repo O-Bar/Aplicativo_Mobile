@@ -9,6 +9,7 @@ export class AjudaPage  {
   public items: any = [];
   public items2: any = []; 
   public items3: any = [];
+  public items4: any = [];
 
 
   constructor() { 
@@ -20,7 +21,10 @@ export class AjudaPage  {
     ];
     this.items3 = [
       { expanded: false }
-    ];  
+    ];
+    this.items4 = [
+      { expanded: false }
+    ];    
   }
 
   expandItem(item): void {
@@ -62,6 +66,20 @@ export class AjudaPage  {
           listItem3.expanded = false;
         }
         return listItem3;
+      });
+    }
+  }
+  expandItem4(item4): void {
+    if (item4.expanded) {
+      item4.expanded = false;
+    } else {
+      this.items4.map(listItem4 => {
+        if (item4 == listItem4) {
+          listItem4.expanded = !listItem4.expanded;
+        } else {
+          listItem4.expanded = false;
+        }
+        return listItem4;
       });
     }
   }
