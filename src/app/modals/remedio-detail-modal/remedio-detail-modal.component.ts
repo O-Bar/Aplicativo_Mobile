@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { RemedioService } from 'src/app/services/remedio.service';
+import { Remedio, RemedioService } from 'src/app/services/remedio.service';
 
 
 @Component({
@@ -8,16 +8,16 @@ import { RemedioService } from 'src/app/services/remedio.service';
   templateUrl: './remedio-detail-modal.component.html',
   styleUrls: ['./remedio-detail-modal.component.scss'],
 })
-export class RemedioDetailModalComponent implements OnInit {
+export class RemedioDetailModalComponent {
 
-  @Input() remedio;
+  @Input() remedio: Remedio;
 
   constructor(
     private modalController: ModalController,
     private remedioService: RemedioService
     ) { }
 
-  ngOnInit() {}
+  
 
   closeModal(){
     this.modalController.dismiss();
