@@ -27,8 +27,8 @@ export class RemedioService {
   }
 
   public addRemedio(newRemedio: Remedio){
+    newRemedio.id = Math.max (0, ...this.allRemedios.map(r => r.id)) + 1
     this.allRemedios.push(newRemedio);
-
     this.storage.set('remedios', this.allRemedios);
   }
 

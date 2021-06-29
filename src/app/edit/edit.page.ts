@@ -19,6 +19,8 @@ export class EditPage implements OnInit {
       ) {
       const id = +route.snapshot.paramMap.get('id');
       this.remedio = this.remedioService.get(id);
+      
+      console.log (this.remedio)
     }
 
     ngOnInit() {
@@ -27,5 +29,6 @@ export class EditPage implements OnInit {
     onClick() {
       this.remedioService.update(this.remedio);
       this.navCtrl.back();
+      console.log (this.remedio)
     }
 }
