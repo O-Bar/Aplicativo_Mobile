@@ -21,7 +21,9 @@ export class RemedioService {
 
   private async loadFromStorage(){
    const remedios = await this.storage.get('remedios') as Remedio[];
-   this.allRemedios.push(...remedios);
+   if (remedios){
+    this.allRemedios.push(...remedios);
+   }
   }
 
   public addRemedio(newRemedio: Remedio){
@@ -35,6 +37,16 @@ export class RemedioService {
     this.allRemedios.splice(remedioIndex, 1);
     this.storage.set('remedios', this.allRemedios);
   }
-    
+  
+  public findByIdremedio (id: number){
+    return { ...this.allRemedios.find(r => r.id === id)}
+  }
+
+  public updateByIdremedio(remedio: number, newData: Remedio){
+    const currentRemedio = this.allRemedios.find(r => r.id === id);
+    currentRemedio.name = newData.name;
+    currentRemedio.dose = newData.dose;
+    currentRemedio.hora = newData.hora;
+  }
 
 }
