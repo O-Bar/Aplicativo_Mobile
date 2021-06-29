@@ -23,4 +23,6 @@ export class RemedioDetailModalComponent implements OnInit {
     this.modalController.dismiss();
   }
 
+  
+
 }
