@@ -37,16 +37,18 @@ export class RemedioService {
     this.allRemedios.splice(remedioIndex, 1);
     this.storage.set('remedios', this.allRemedios);
   }
+
+  public all(){
+    return this.allRemedios;
+  }
+
+  public get(id: number) {
+    return { ...this.allRemedios.find(r => r.id === id) };
+  }
   
-  public findByIdremedio (id: number){
-    return { ...this.allRemedios.find(r => r.id === id)}
+  public update(remedio){
+    const index = this.allRemedios.findIndex(r => r.id === remedio.id);
+    this.allRemedios[index] = remedio;
+    this.storage.set('remedios', this.allRemedios);
   }
-
-  public updateByIdremedio(remedio: number, newData: Remedio){
-    const currentRemedio = this.allRemedios.find(r => r.id === id);
-    currentRemedio.name = newData.name;
-    currentRemedio.dose = newData.dose;
-    currentRemedio.hora = newData.hora;
-  }
-
 }

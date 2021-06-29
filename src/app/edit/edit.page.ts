@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { RemedioService } from '../services/remedio.service';
@@ -8,22 +8,24 @@ import { RemedioService } from '../services/remedio.service';
   templateUrl: './edit.page.html',
   styleUrls: ['./edit.page.scss'],
 })
-export class EditPage {
+export class EditPage implements OnInit {
 
     public remedio;
-    private originalId;
 
-  constructor(
-    route: ActivatedRoute, 
-    private remedioService: RemedioService,
-    private navCtrl: NavController
-    ) { 
-    this.originalId = route.snapshot.paramMap.get('id');
-    this.remedio = remedioService.findByIdremedio(this.originalId); 
-  }
+    constructor(
+      route: ActivatedRoute, 
+      private remedioService: RemedioService,
+      private navCtrl:NavController
+      ) {
+      const id = +route.snapshot.paramMap.get('id');
+      this.remedio = this.remedioService.get(id);
+    }
 
-  public saveChanges() {
-    this.remedioService.updateByIdremedio(this.originalId, this.remedio);
-    this.navCtrl.back();
-  }
+    ngOnInit() {
+    }
+
+    onClick() {
+      this.remedioService.update(this.remedio);
+      this.navCtrl.back();
+    }
 }

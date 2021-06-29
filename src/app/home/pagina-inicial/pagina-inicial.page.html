@@ -19,10 +19,12 @@
     <ion-list *ngIf="remedios.length > 0; else emptyRemedios" class="listRemedio">
       <ion-item *ngFor='let remedio of remedios' color="dark" (click)="openModal(remedio)">
         <ion-label>
-          <h3>Remédio</h3>
           <h4>{{remedio.name}}</h4>
           <h6>Clique para mais detalhes</h6>
         </ion-label>
+        <ion-button color="tertiary" [routerLink]="['/edit', remedio.id]">
+          <ion-icon name="create"></ion-icon>
+      </ion-button>
       </ion-item>
     </ion-list>
     <ng-template #emptyRemedios>

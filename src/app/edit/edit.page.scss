@@ -1,0 +1,30 @@
+ion-toolbar ion-title img {
+    height: 1.5em;
+    display: block;
+    width: 1.5em;
+  }
+  ion-title{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20pt;
+    font-weight: normal; 
+    margin: 0; //para alinhar
+  }
+  
+  ion-content {
+    --background: url('https://static.vecteezy.com/ti/vetor-gratis/p1/1843071-roxo-escuro-rosa-desfocado-vetor.jpg') no-repeat center center / cover !important;
+  }
+
+  h3{
+    font-size: 11pt;
+    margin: 0; //para alinhar
+    color: rgba(192, 192, 192, 0.885);
+  }
+  h4{
+    font-size: 11pt;
+    margin: 0; //para alinhar
+    color: rgb(255, 253, 253);
+  }
+  .listRemedio {
+    background: #1a083c;
+    ;
+  }
